@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
 
 :root {
-  /* Dark mode as default */
-  --main-color: #2b1103; /* deep brown */
-  --sub-color: #d6c1a3; /* light golden */
-  --white: #f5e6d3; /* cream */
+
+  --main-color: #2b1103; 
+  --sub-color: #d6c1a3; 
+  --white: #f5e6d3; 
   --border: 0.1rem solid rgba(255, 255, 255, 0.2);
-  --bg-color: #2b1103; /* dark brown background */
-  --text-color: #f5e6d3; /* cream text */
+  --bg-color: #2b1103; 
+  --text-color: #f5e6d3; 
 }
 
 body {
