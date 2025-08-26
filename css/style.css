@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
 
 :root {
-  --main-color: #2b1103;
-  --sub-color: #dcc69c;
-  --white: #fff;
-  --border: 0.1rem solid rgba(220, 198, 156, 0.3);
+  /* Dark mode as default */
+  --main-color: #2b1103; /* deep brown */
+  --sub-color: #d6c1a3; /* light golden */
+  --white: #f5e6d3; /* cream */
+  --border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  --bg-color: #2b1103; /* dark brown background */
+  --text-color: #f5e6d3; /* cream text */
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 * {
@@ -43,8 +51,24 @@ html {
   scroll-padding-top: 2rem;
 }
 
-body {
-  background-color: var(--main-color);
+body.light-mode {
+  --main-color: #f5e6d3;
+  --sub-color: #f0b64a;
+  --white: #000000;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --bg-color: #f5e6d3;
+  --text-color: #2a201c;
+}
+
+.navbar a {
+  color: var(--text-color);
+}
+
+#theme-toggle {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  color: var(--text-color);
 }
 
 section {
@@ -58,6 +82,7 @@ section {
   cursor: pointer;
   padding: 1rem 3rem;
   border: var(--border);
+  border-radius: 0.7rem;
   font-size: 1.8rem;
   color: var(--sub-color);
   text-align: center;
@@ -109,6 +134,7 @@ section {
   background-color: var(--sub-color);
   padding: 0.5rem;
   border-radius: 0.5rem;
+  width: 105%;
 }
 
 .header .navbar a {
@@ -571,4 +597,35 @@ section {
     height: 25rem;
     width: 30rem;
   }
+}
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.popup-content {
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 15% auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#close-popup {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-color);
 }
