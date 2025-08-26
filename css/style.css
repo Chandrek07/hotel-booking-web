@@ -176,7 +176,7 @@ section {
   justify-content: center;
   gap: 1.5rem;
   color: var(--sub-color);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 .swiper-button-prev {
   left: 0%;
@@ -360,8 +360,8 @@ section {
 }
 
 .gallery img {
-  height: 40rem;
-  width: 60rem;
+  height: 35rem;
+  width: 55rem;
   border-radius: 0.5rem;
   object-fit: cover;
   margin-bottom: 4rem;
@@ -382,9 +382,9 @@ section {
 
 .contact .row {
   display: flex;
-  align-items: flex-start;
   gap: 3rem;
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .contact .row form {
@@ -393,10 +393,6 @@ section {
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
-}
-
-.contact .row .faq {
-  flex: 1 1 40rem;
 }
 
 .contact .row form h3 {
@@ -427,40 +423,81 @@ section {
   height: 15rem;
   resize: none;
 }
+.contact .row .map {
+  flex: 1 1 40rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: var(--border);
 
-.contact .row .faq .title {
-  padding-bottom: 0.5rem;
-  font-size: 2.5rem;
-  color: var(--sub-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .row .map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.contact .row form,
+.contact .row .faq {
+  flex: 1 1 40rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--main-color);
+  height: auto;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.faq .title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
   text-transform: capitalize;
+  color: var(--sub-color);
   text-align: center;
 }
 
-.contact .row .faq .box {
-  border-radius: 0.5rem;
-  border: var(--border);
-  margin-top: 2rem;
-}
-
-.contact .row .faq .box h3 {
-  background-color: var(--sub-color);
-  color: var(--main-color);
-  padding: 1.5rem;
-  font-size: 2rem;
+.faq .box {
+  background: var(--sub-color);
+  margin: 0.8rem 0;
+  padding: 1rem 1.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.contact .row .faq .box p {
-  padding: 1.5rem 2rem;
-  line-height: 2;
-  font-size: 1.6rem;
-  color: var(--sub-color);
+.faq .box:hover {
+  background: #caa777;
+}
+
+.faq .box h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq .box p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #2d2d2d;
+  margin-top: 0.5rem;
   display: none;
 }
 
-.contact .row .faq .box.active p {
-  display: inline-block;
+.faq .box.active p {
+  display: block;
 }
 
 .reviews {
@@ -628,4 +665,73 @@ section {
   font-size: 2rem;
   cursor: pointer;
   color: var(--text-color);
+}
+.rooms {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.rooms .heading {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: var(--sub-color);
+}
+
+.room-swiper {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.room-card {
+  background: #d6c1a3;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform 0.3s;
+  text-align: left;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.room-card h3 {
+  font-size: 2rem;
+  color: #2b1103;
+}
+
+.room-card .stars {
+  margin: 0.5rem 0 1rem;
+  color: #b8860b;
+  font-size: 1.6rem;
+}
+
+.room-card .price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2b1103;
+  margin: 1rem 0;
+}
+
+.room-card .desc {
+  font-size: 1.4rem;
+  color: #3a1f04;
+  margin-bottom: 1rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2b1103;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f1f1ee;
 }

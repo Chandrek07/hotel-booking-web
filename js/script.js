@@ -8,10 +8,14 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
-document.querySelectorAll(".contact .row .faq .box h3").forEach((faqBox) => {
-  faqBox.onclick = () => {
-    faqBox.parentElement.classList.toggle("active");
-  };
+document.querySelectorAll(".faq .box").forEach((box) => {
+  box.addEventListener("click", () => {
+    document.querySelectorAll(".faq .box").forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    box.classList.add("active");
+  });
 });
 
 const themeToggle = document.getElementById("theme-toggle");
@@ -21,6 +25,35 @@ body.classList.remove("light-mode");
 
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("light-mode");
+
+  if (body.classList.contains("light-mode")) {
+    themeToggle.innerHTML = "🌙";
+  } else {
+    themeToggle.innerHTML = "☀️";
+  }
+});
+
+var swiper = new Swiper(".rooms-slider", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    991: {
+      slidesPerView: 3,
+    },
+  },
 });
 
 var swiper = new Swiper(".home-slider", {
